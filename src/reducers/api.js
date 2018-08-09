@@ -29,3 +29,4 @@ function createApiReducer(store) {
 export const dependenciesRequest = createApiReducer('dependenciesRequest');
 export const layoutRequest = createApiReducer('layoutRequest');
 export const loginRequest = createApiReducer('loginRequest');
+export const reloadHash = createApiReducer('reloadHash');

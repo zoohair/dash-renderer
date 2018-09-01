@@ -6,8 +6,9 @@ const graphs = (state = initialGraph, action) => {
     switch (action.type) {
         case 'COMPUTE_GRAPHS': {
             const dependencies = action.payload;
-            const inputGraph = new DepGraph();
-            const eventGraph = new DepGraph();
+            /* TODO: allow for circular to be passed from dash config */
+            const inputGraph = new DepGraph({ circular: true });
+            const eventGraph = new DepGraph({ circular: true });
 
             dependencies.forEach(function registerDependency(dependency) {
                 const {output, inputs, events} = dependency;
